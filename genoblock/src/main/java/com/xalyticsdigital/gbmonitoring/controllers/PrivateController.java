@@ -36,6 +36,11 @@ public class PrivateController {
     public ModelAndView getTestSockets(Principal principal) {
         return new ModelAndView("private/testsockets");
     }
+    
+    @RequestMapping(value = "/management", method = RequestMethod.GET)    
+    public ModelAndView getManagement() {
+        return new ModelAndView("private/dashboard");
+    }
 
     @RequestMapping(value = "/loadfile", method = RequestMethod.GET)
     //public String sendFile(@RequestPart("foto") byte[] foto,
@@ -58,7 +63,7 @@ public class PrivateController {
 
         redirectAttributes.addFlashAttribute("hash", hash);
 
-        return "redirect:/private/privado";
+        return "redirect:/private/dashboard";
     }
 
     @RequestMapping(value = "/downloadfile", method = RequestMethod.GET)

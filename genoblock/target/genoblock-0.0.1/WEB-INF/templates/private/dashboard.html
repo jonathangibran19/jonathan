@@ -44,14 +44,14 @@
             <ul id="slide-out" class="sidenav sidenav-fixed">
                 <li><div class="user-view">
                         <div class="background">
-                            <img th:src="@{/assets/images/1.jpg}"/>
+                            <img th:src="@{/assets/images/1.jpg}"></img>
                         </div>
-                        <a href="#user"><img class="circle" th:src="@{/assets/images/2.jpg}"></a>
+                        <a href="#user"><img class="circle" th:src="@{/assets/images/2.jpg}"></img></a>
                         <a href="#name"><span class="white-text name">Edgar Vazquez</span></a>
                         <a href="#email"><span class="white-text email">edgar.08.94@gmail.com</span></a>
                     </div></li>
-                <li><a th:href="@{/loadfile}"><i class="material-icons">cloud_upload</i>Subir secuencia</a></li>
-                <li><a th:href="@{/downloadfile}"><i class="material-icons">cloud_download</i>Consultar</a></li>
+                <li><a th:href="@{/private/loadfile}"><i class="material-icons">cloud_upload</i>Subir secuencia</a></li>
+                <li><a th:href="@{/private/downloadfile}"><i class="material-icons">cloud_download</i>Consultar</a></li>
                 <li class="divider"></li>
                 <li><a id="signOut" th:href="@{/index}" class="btn red">Cerrar sesi&oacute;n</a></li>
             </ul>
