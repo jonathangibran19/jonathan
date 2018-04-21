@@ -1,12 +1,160 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html lang="en">
     <head>
-        <title>Index</title>
-        <meta charset="UTF-8"/>
-        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="shortcut icon" href="img/dna.png" type="image/x-icon"/>
+        <title>GenoBlock</title>
+
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     </head>
     <body>
-        <h1>Inicio</h1>
-        <a th:href="@{/login}"><strong>Login</strong></a>
+        <nav class="white" role="navigation">
+            <div class="nav-wrapper container">
+                <a id="logo-container" href="#" class="brand-logo">GenoBlock</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="login.html">Inicio de sesión</a></li>
+                    <li><a href="registry.html" class="btn">Registro</a></li>
+                </ul>
+
+                <ul id="nav-mobile" class="sidenav">
+                    <li><a href="login.html">Inicio de sesión</a></li>
+                    <li><a href="registry.html" class="btn">Registro</a></li>
+                </ul>
+                <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+
+        <div id="index-banner" class="parallax-container">
+            <div class="section no-pad-bot">
+                <div class="container">
+                    <br><br>
+                    <h1 class="header center whiite-text text-lighten-2"><b>GenoBlock</b></h1>
+                    <div class="row center">
+                        <h5 class="header col s12 light"><b>Seguridad y portabilidad de datos genómicos</b></h5>
+                    </div>
+                    <div class="row center">
+                        <a href="#l" id="download-button" class="btn-large waves-effect waves-light white black-text lighten-1">Conocer</a>
+                    </div>
+                    <br><br>
+                    <br><br>
+                </div>
+            </div>
+            <div class="parallax"><img src="img/1.jpg" alt="Unsplashed background img 1"></div>
+        </div>
+
+
+        <div class="container">
+            <div class="section">
+
+                <!--   Icon Section   -->
+                <div class="row">
+                    <div class="col s12 m4 grey lighten-2 hoverable">
+                        <div class="icon-block">
+                            <h2 class="center brown-text"><i class="material-icons blue-text">security</i></h2>
+                            <h5 class="center">Seguro</h5>
+
+                            <p class="light center-align">Infraestructura distribuida para brindar total seguridad de integridad e inmutabilidad de datos</p>
+                            <br><br>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4 hoverable">
+                        <div class="icon-block">
+                            <h2 class="center brown-text"><i class="material-icons blue-text">linear_scale</i></h2>
+                            <h5 class="center">Blockchain</h5>
+
+                            <p class="light center-align">Aplicación de cadenas de bloques cifradas para almacenamiento de secuencias, dando total acceso a los portadores de la llave</p>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4 grey lighten-2 hoverable">
+                        <div class="icon-block">
+                            <h2 class="center brown-text"><i class="material-icons blue-text">data_usage</i></h2>
+                            <h5 class="center">Datos portables</h5>
+
+                            <p class="light center-align">Obtención de las secuencias en cualquier lugar, en cualquier momento, asegurando total disponibilidad de la información</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="parallax-container valign-wrapper">
+            <div class="section no-pad-bot">
+                <div class="container">
+                    <div class="row center">
+                        <h5 class="header col s12 light"></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="parallax"><img src="img/2.jpg" alt="Unsplashed background img 2"></div>
+        </div>
+
+        <div class="container">
+            <div class="section">
+
+                <div class="row">
+                    <div class="col s12 center">
+                        <h3><i class="mdi-content-send brown-text"></i></h3>
+                        <h4>Disponibilidad en cloud</h4>
+                        <p class="cenyer-align light">Cifrado y tratamiento en la nube protegidos con mecanismos de criptografía y descentralización</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="parallax-container valign-wrapper">
+            <div class="section no-pad-bot">
+                <div class="container">
+                    <div class="row center">
+                        <h5 class="header col s12 light">Infraestructura a tu disponibilidad</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="parallax"><img src="img/background3.jpg" alt="Unsplashed background img 3"></div>
+        </div>
+
+        <footer class="page-footer teal">
+            <div class="container">
+                <div class="row">
+                    <div class="col l9 s12">
+                        <h5 class="white-text">GenoBlock</h5>
+                        <p class="grey-text text-lighten-4">Somos un grupo de estudiantes, entusiastas de la tecnología, en busca de nuevos retos</p>
+
+
+                    </div>
+                    <div class="col l3 s12">
+                        <h5 class="white-text">proISC</h5>
+                        <ul>
+                            <li><a class="white-text" href="#!">Oscar Emiliano Lara Najera</a></li>
+                            <li><a class="white-text" href="#!">Edgar Isidro Galeana Ramirez</a></li>
+                            <li><a class="white-text" href="#!">Fernando Martin Castañeda Martinez</a></li>
+                            <li><a class="white-text" href="#!">Jonathan Gibran Hernandez Antunez</a></li>
+                            <li><a class="white-text" href="#!">Edgar Armando Vazquez Vargas</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    <a class="brown-text text-lighten-3" href="#">Instituto Tecnológico de Zacatepec</a>
+                </div>
+            </div>
+        </footer>
+
+
+        <!--  Scripts-->
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="js/materialize.js"></script>
+        <script src="js/init.js"></script>
+
     </body>
 </html>
