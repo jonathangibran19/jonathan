@@ -13,8 +13,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class IpfsService {
 
-    
-
     public String uploadFileToIpfs(byte[] fileInBytes, String originalFileName) throws IOException {
         IPFS ipfs = new IPFS(new MultiAddress("/ip4/127.0.0.1/tcp/5001"));
         NamedStreamable.ByteArrayWrapper file = new NamedStreamable.ByteArrayWrapper(originalFileName, fileInBytes);
@@ -25,7 +23,7 @@ public class IpfsService {
     }
 
     public String downloadFile(String hashFile) throws IOException {
-
+        IPFS ipfs = new IPFS(new MultiAddress("/ip4/127.0.0.1/tcp/5001"));
         Multihash filePointer = Multihash.fromBase58(hashFile);
         byte[] fileContents = ipfs.cat(filePointer);
 

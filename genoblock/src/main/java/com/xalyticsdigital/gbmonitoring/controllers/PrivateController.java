@@ -24,9 +24,10 @@ public class PrivateController {
 
     // @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_DASHBOARD_USER')")
     @RequestMapping(value = "/privado", method = RequestMethod.GET)
-    public ModelAndView getPrivado(Principal principal, @ModelAttribute("hash") final String hash) {
+    public ModelAndView getPrivado(Principal principal, @ModelAttribute("hash") final String hash, @ModelAttribute("link") final String link) {
         ModelAndView modelAndView = new ModelAndView("private/privado");
         System.out.println(hash);
+        System.out.println(link);
         return modelAndView;
     }
 
@@ -55,6 +56,18 @@ public class PrivateController {
         String hash = ipfsService.uploadFileToIpfs(file.getBytes(), file.getOriginalFilename());
 
         redirectAttributes.addFlashAttribute("hash", hash);
+
+        return "redirect:/private/privado";
+    }
+
+    @RequestMapping(value = "/downloadfile", method = RequestMethod.POST)
+    //public String sendFile(@RequestPart("foto") byte[] foto,
+    public String downloadFile(
+            @RequestParam("hash") String hash, RedirectAttributes redirectAttributes) throws IOException {
+
+        String url = ipfsService.downloadFile(hash);
+
+        redirectAttributes.addFlashAttribute("link", hash);
 
         return "redirect:/private/privado";
     }

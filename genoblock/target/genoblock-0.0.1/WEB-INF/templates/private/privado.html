@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <head>
-        <title>Graficas</title>
+        <title>Genoblock</title>
 
         <meta charset="UTF-8"/>
 
@@ -27,7 +27,8 @@
 
     <body>
         <h1>genoblock</h1>
-        <h5 th:text="${ (hash!=null || !hash.equals('') )? 'Genoma file uploaded: ' + hash : 'NO HASH CREATED' }"></h5>
+        <h5 th:text="${ !hash ? 'Genoma file uploaded: ' + hash : 'NO HASH CREATED' }"></h5>
+        <h5 th:text="${ !link ? 'Download link: ' + link : 'NO GENERATED' }"></h5>
         <a th:href="@{/private/sendfile}" >Upload file</a>
 
     </body>
