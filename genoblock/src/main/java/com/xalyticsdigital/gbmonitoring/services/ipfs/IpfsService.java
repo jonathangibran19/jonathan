@@ -27,9 +27,9 @@ public class IpfsService {
         Multihash filePointer = Multihash.fromBase58(hashFile);
         byte[] fileContents = ipfs.cat(filePointer);
 
-        try (FileOutputStream fos = new FileOutputStream(new File("/home/jonathan/Desktop/genomas/" + hashFile))) {
-            fos.write(fileContents);
-        };
+//        try (FileOutputStream fos = new FileOutputStream(new File("/home/jonathan/Desktop/genomas/" + hashFile))) {
+//            fos.write(fileContents);
+//        };
 
         String url = "https://gateway.ipfs.io/ipfs/" + hashFile;
 

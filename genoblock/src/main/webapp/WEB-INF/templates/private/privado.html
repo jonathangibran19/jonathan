@@ -27,9 +27,12 @@
 
     <body>
         <h1>genoblock</h1>
-        <h5 th:text="${ !hash ? 'Genoma file uploaded: ' + hash : 'NO HASH CREATED' }"></h5>
-        <h5 th:text="${ !link ? 'Download link: ' + link : 'NO GENERATED' }"></h5>
-        <a th:href="@{/private/sendfile}" >Upload file</a>
+        <h5 th:text="${ (hash!=null) ? 'Genoma file uploaded: ' + hash : 'NO HASH CREATED' }"></h5>
+        <h5 th:text="${ (link!=null) ? 'Download link: ' + link : 'DOWNLOAD LINK NO GENERATED' }"></h5>
+        
+        <a th:href="@{/private/sendfile}" >Upload file</a>|
+        <a th:href="@{/private/downloadfile}">Download file</a>
+        
 
     </body>
 </html>
