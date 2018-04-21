@@ -14,3 +14,9 @@ hs_err_pid*
 genoblock/target/classes/\.netbeans_automatic_build
 
 genoblock/target/test-classes/\.netbeans_automatic_build
+
+genoblock/target/surefire-reports/TEST-gbconnected\.test\.Test\.xml
+
+genoblock/target/surefire-reports/gbconnected\.test\.Test\.txt
+
+*.dpf
