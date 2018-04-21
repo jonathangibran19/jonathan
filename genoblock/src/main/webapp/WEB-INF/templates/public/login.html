@@ -28,13 +28,13 @@
         </nav>
         <div class="container">
             <div class="row">
-                <h1 class="blue-text text-darken-1 center">Sesión</h1>
+                <h1 class="blue-text text-darken-1 center">Sesi&oa&oacute;n</h1>
                 <form class="col s12 m6 offset-m3" th:action="@{/login}" method="post">
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                     <div class="row">
                         <div class="input-field col s6">
                             <input name="username" id="user" type="text" class="validate" required="true" />
-                            <label for="user">Usuario / No. empleado</label>
+                            <label for="user">Usuario</label>
                         </div>
                         <div class="input-field col s6">
                             <input name="password" id="password" type="password"  required="true" />
