@@ -13,9 +13,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class IpfsService {
 
-    private final IPFS ipfs = new IPFS(new MultiAddress("/ip4/127.0.0.1/tcp/5001"));
+    
 
     public String uploadFileToIpfs(byte[] fileInBytes, String originalFileName) throws IOException {
+        IPFS ipfs = new IPFS(new MultiAddress("/ip4/127.0.0.1/tcp/5001"));
         NamedStreamable.ByteArrayWrapper file = new NamedStreamable.ByteArrayWrapper(originalFileName, fileInBytes);
         MerkleNode addResult = ipfs.add(file).get(0);
         String hash = addResult.hash.toBase58();

@@ -22,8 +22,8 @@ public class Test {
     @org.junit.Test
     public void prueba() throws IOException {
         System.out.println("############################ TEST ##############################");
-        IPFS ipfs = new IPFS(new MultiAddress("/ip4/127.0.0.1/tcp/5001"));
-        ipfs.refs.local().forEach(System.out::println);
+//        IPFS ipfs = new IPFS(new MultiAddress("/ip4/127.0.0.1/tcp/5001"));
+//        ipfs.refs.local().forEach(System.out::println);
     }
 
 }
