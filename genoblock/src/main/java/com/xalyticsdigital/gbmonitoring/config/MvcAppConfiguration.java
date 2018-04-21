@@ -51,7 +51,7 @@ public class MvcAppConfiguration extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/fonts/**").addResourceLocations("/WEB-INF/resources/fonts/");
         registry.addResourceHandler("/views/**").addResourceLocations("/WEB-INF/views/");
         registry.addResourceHandler("/assets/**").addResourceLocations("/WEB-INF/resources/assets/");
-        //registry.addResourceHandler("/fotos/**").addResourceLocations("file:/home/jonathan/Desktop/fotos/");  // system files
+        registry.addResourceHandler("/fotos/**").addResourceLocations("file:/home/jonathan/Desktop/genomas/");  // system files
     }
 
 //    @Bean
