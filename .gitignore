@@ -20,3 +20,5 @@ genoblock/target/surefire-reports/TEST-gbconnected\.test\.Test\.xml
 genoblock/target/surefire-reports/gbconnected\.test\.Test\.txt
 
 *.dpf
+
+genoblock/target/maven-archiver/pom\.properties

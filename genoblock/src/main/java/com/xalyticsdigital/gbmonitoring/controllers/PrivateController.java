@@ -71,7 +71,7 @@ public class PrivateController {
     public String downloadFileView(
             RedirectAttributes redirectAttributes) {
 
-        return "private/downloadFile";
+        return "private/downloadfile";
     }
 
     @RequestMapping(value = "/downloadfile", method = RequestMethod.POST)

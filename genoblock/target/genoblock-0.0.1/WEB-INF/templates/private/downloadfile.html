@@ -40,9 +40,9 @@
         <main>
             <div>
                 <div class="container">
-                    <h2 class="header center whiite-text text-lighten-2"><b>Descarga de secuencia</b></h2>
+                    <h2 class="header center teal-text text-lighten-1">Descarga de secuencia</h2>
                     <div class="row">
-                        <div class="col s10">
+                        <div class="col s12">
                             <form name="downloadfile" th:action="@{/private/downloadfile}" method="POST">
                                 <!--<div class="file-field input-field">
                                     <div class="btn">
@@ -53,13 +53,15 @@
                                         <input type="submit" value="Enviar">
                                     </div>
                                 </div>-->
-                                <input type="text" name="hash"   id="hash" ></input>
-                                <input type="submit" value="Enviar">Enviar</input>
+                                <input type="text" name="hash" id="hash" required="true"  pattern=".*" ></input>                                
+                                <div class="center">
+                                    <button class="waves-effect waves-light btn btn-large" id="target" onclick="pulseOff()" type="submit"><i class="material-icons left">cloud_download</i>Descargar</button>  
+                                </div>
                             </form>
                         </div>
-                        <div class="col s2s">
+                        <!--<div class="col s2s">
                             <a class="waves-effect waves-light btn btn-large" id="target" onclick="pulseOff()"><i class="material-icons left">cloud_upload</i>Subir</a>  
-                        </div>
+                        </div>-->
                         <div class="col s12" id="contenido-archivo">
 
                         </div>
@@ -72,14 +74,14 @@
                         <div class="background">
                             <img th:src="@{/assets/images/1.jpg}"/>
                         </div>
-                        <a href="#user"><img class="circle" th:src="@{/assets/images/2.jpg}"></a>
+                        <a href="#user"><img class="circle" th:src="@{/assets/images/2.jpg}"/></a>
                         <a href="#name"><span class="white-text name">Edgar Vazquez</span></a>
                         <a href="#email"><span class="white-text email">edgar.08.94@gmail.com</span></a>
                     </div></li>
-                <li><a th:href="@{/private/dashboard}"><i class="material-icons">info</i>Informaci&oacute;n de la cuenta</a></li> 
+                <li><a th:href="@{/private/management}"><i class="material-icons">info</i>Informaci&oacute;n de la cuenta</a></li> 
                 <li><a th:href="@{/private/loadfile}"><i class="material-icons">cloud_download</i>Subir secuencia</a></li>
                 <li class="divider"></li>
-                <li><a th:href="@{/index}" class="btn red">Cerrar sesi&oacute;n</a></li>
+                <li><a th:href="@{/logout}" class="btn red">Cerrar sesi&oacute;n</a></li>
             </ul>
         </main>
 
@@ -137,7 +139,7 @@
                                     document.getElementById("target").classList.add("pulse");
                                 }
 
-                                document.getElementById('file-input')
+                                document.getElementById('hash')
                                         .addEventListener('change', leerArchivo, false);
 
 
