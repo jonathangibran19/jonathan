@@ -11,6 +11,21 @@ public class PublicViewController {
     public ModelAndView getInicio() {
         return new ModelAndView("public/index");
     }
+    
+    @RequestMapping(value = {"/sesion", "/"})
+    public ModelAndView getLogin() {
+        return new ModelAndView("public/login");
+    }
+    
+    @RequestMapping(value = {"/registro", "/"})
+    public ModelAndView getRegistro() {
+        return new ModelAndView("public/registry");
+    }
+    
+    @RequestMapping(value = {"/verificacion", "/"})
+    public ModelAndView getVerifica() {
+        return new ModelAndView("public/verifyregistry");
+    }
 
     @RequestMapping(value = {"/notfound"})
     public ModelAndView getContentNotFound() {
