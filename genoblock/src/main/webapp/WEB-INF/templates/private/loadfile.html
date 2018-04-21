@@ -40,26 +40,25 @@
         <main>
             <div>
                 <div class="container">
-                    <h2 class="header center whiite-text text-lighten-2"><b>Subida de secuencia</b></h2>
+                    <h2 class="header center teal-text text-lighten-1">Subida de secuencia</h2>
                     <div class="row">
-                        <div class="col s10">
+                        <div class="col s12">
                             <form name="sendfile" th:action="@{/private/loadfile}" method="POST" enctype="multipart/form-data">
-                                <div class="file-field input-field">
+                                <div class="file-field input-field col s10">
                                     <div class="btn">
                                         <span>Archivo</span>
-                                        <input type="file" id="foto" name="foto">
+                                        <input type="file" id="foto" name="foto"/>
                                     </div>
                                     <div class="file-path-wrapper">
-                                        <input class="file-path validate" type="submit" value="Enviar"></input>
+                                        <input class="file-path" type="submit"/>
                                     </div>
                                 </div>
-                                <!--<input type="file" name="foto" id="foto" ></input>
-                                <input type="submit" value="Enviar">Enviar</input>-->
+                                <div class="col s2 center">
+                                    <a type="submit" class="waves-effect waves-light btn btn-large" id="target" onclick="pulseOff()"><i class="material-icons left">cloud_upload</i>Subir</a>  
+                                </div>
                             </form>
                         </div>
-                        <div class="col s2s">
-                            <a class="waves-effect waves-light btn btn-large" id="target" onclick="pulseOff()"><i class="material-icons left">cloud_upload</i>Subir</a>  
-                        </div>
+
                         <div class="col s12" id="contenido-archivo">
 
                         </div>
@@ -76,10 +75,10 @@
                         <a href="#name"><span class="white-text name">Edgar Vazquez</span></a>
                         <a href="#email"><span class="white-text email">edgar.08.94@gmail.com</span></a>
                     </div></li>
-                <li><a th:href="@{/private/dashboard}" ><i class="material-icons">info</i>Informaci&oacute;n de la cuenta</a></li> 
+                <li><a th:href="@{/private/management}" ><i class="material-icons">info</i>Informaci&oacute;n de la cuenta</a></li> 
                 <li><a th:href="@{/private/downloadfile}"><i class="material-icons">cloud_download</i>Consultar</a></li>
                 <li class="divider"></li>
-                <li><a th:href="@{/index}" class="btn red">Cerrar sesi&oacute;n</a></li>
+                <li><a th:href="@{/logout}" class="btn red">Cerrar sesi&oacute;n</a></li>
             </ul>
         </main>
 
@@ -137,7 +136,7 @@
                                     document.getElementById("target").classList.add("pulse");
                                 }
 
-                                document.getElementById('file-input')
+                                document.getElementById('foto')
                                         .addEventListener('change', leerArchivo, false);
 
 

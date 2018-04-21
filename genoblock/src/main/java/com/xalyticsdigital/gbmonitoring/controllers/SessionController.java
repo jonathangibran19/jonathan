@@ -22,9 +22,9 @@ public class SessionController {
         /*Si existe una sesion abierta no puede acceder al formulario de registro*/
         if (principal != null) {
             if (request.isUserInRole("DASHBOARD_USER")) {
-                return new ModelAndView("redirect:/private/privado");
+                return new ModelAndView("redirect:/private/management");
             } else if (request.isUserInRole("ADMIN")) {
-                return new ModelAndView("redirect:/private/privado");
+                return new ModelAndView("redirect:/private/management");
             }
         }
         ModelAndView model = new ModelAndView("redirect:login");
@@ -38,9 +38,9 @@ public class SessionController {
         /*Si existe una sesion abierta no puede acceder al formulario de inicio de sesion*/
         if (principal != null) {
             if (request.isUserInRole("DASHBOARD_USER")) {
-                return new ModelAndView("redirect:private/privado");
+                return new ModelAndView("redirect:private/management");
             } else if (request.isUserInRole("ADMIN")) {
-                return new ModelAndView("redirect:private/privado");
+                return new ModelAndView("redirect:private/management");
             }
         }
         ModelAndView model = new ModelAndView("public/login");
@@ -56,7 +56,7 @@ public class SessionController {
         if (auth != null) {
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
-        return "redirect:/?logout";
+        return "redirect:/?inicio";
     }
 
 }
