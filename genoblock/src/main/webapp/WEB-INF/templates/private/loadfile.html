@@ -43,6 +43,7 @@
                     <h2 class="header center teal-text text-lighten-1">Subida de secuencia</h2>
                     <div class="row">
                         <div class="col s12">
+
                             <form name="sendfile" th:action="@{/private/loadfile}" method="POST" enctype="multipart/form-data">
                                 <div class="file-field input-field col s10">
                                     <div class="btn">
@@ -50,11 +51,13 @@
                                         <input type="file" id="foto" name="foto"/>
                                     </div>
                                     <div class="file-path-wrapper">
-                                        <input class="file-path" type="submit"/>
+                                        <input class="file-path" type="text"/>
                                     </div>
                                 </div>
                                 <div class="col s2 center">
-                                    <a type="submit" class="waves-effect waves-light btn btn-large" id="target" onclick="pulseOff()"><i class="material-icons left">cloud_upload</i>Subir</a>  
+                                    <button class="btn waves-effect waves-light" id="target" type="submit" name="action">Subir
+                                        <i class="material-icons right">send</i>
+                                    </button>                                    
                                 </div>
                             </form>
                         </div>
@@ -117,35 +120,35 @@
         <script th:src="@{/assets/js/init.js}" type="text/javascript"></script>
 
         <script>
-                                function leerArchivo(e) {
-                                    var archivo = e.target.files[0];
-                                    if (!archivo) {
-                                        return;
-                                    }
-                                    var lector = new FileReader();
-                                    lector.onload = function (e) {
-                                        var contenido = e.target.result;
-                                        mostrarContenido(contenido);
-                                    };
-                                    lector.readAsText(archivo);
-                                }
+                                        function leerArchivo(e) {
+                                            var archivo = e.target.files[0];
+                                            if (!archivo) {
+                                                return;
+                                            }
+                                            var lector = new FileReader();
+                                            lector.onload = function (e) {
+                                                var contenido = e.target.result;
+                                                mostrarContenido(contenido);
+                                            };
+                                            lector.readAsText(archivo);
+                                        }
 
-                                function mostrarContenido(contenido) {
-                                    var elemento = document.getElementById('contenido-archivo');
-                                    elemento.innerHTML = contenido;
-                                    document.getElementById("target").classList.add("pulse");
-                                }
+                                        function mostrarContenido(contenido) {
+                                            var elemento = document.getElementById('contenido-archivo');
+                                            elemento.innerHTML = contenido;
+                                            document.getElementById("target").classList.add("pulse");
+                                        }
 
-                                document.getElementById('foto')
-                                        .addEventListener('change', leerArchivo, false);
+                                        document.getElementById('foto')
+                                                .addEventListener('change', leerArchivo, false);
 
 
 
-                                function pulseOff() {
-                                    document.getElementById("target").classList.remove("pulse");
-                                    var elemento = document.getElementById('contenido-archivo');
-                                    elemento.innerHTML = "";
-                                }
+                                        function pulseOff() {
+                                            document.getElementById("target").classList.remove("pulse");
+                                            var elemento = document.getElementById('contenido-archivo');
+                                            elemento.innerHTML = "";
+                                        }
         </script>
     </body>
 </html>
