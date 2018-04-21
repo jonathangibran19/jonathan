@@ -12,17 +12,17 @@ public class PublicViewController {
         return new ModelAndView("public/index");
     }
     
-    @RequestMapping(value = {"/sesion", "/"})
+    @RequestMapping(value = {"/sesion"})
     public ModelAndView getLogin() {
         return new ModelAndView("public/login");
     }
     
-    @RequestMapping(value = {"/registro", "/"})
+    @RequestMapping(value = {"/registro"})
     public ModelAndView getRegistro() {
         return new ModelAndView("public/registry");
     }
     
-    @RequestMapping(value = {"/verificacion", "/"})
+    @RequestMapping(value = {"/verificacion"})
     public ModelAndView getVerifica() {
         return new ModelAndView("public/verifyregistry");
     }
