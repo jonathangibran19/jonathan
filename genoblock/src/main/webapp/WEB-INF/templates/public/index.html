@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type"/>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="shortcut icon" th:href="@{/assets/images/dna.jpg}" type="image/x-icon"/>
+        <link rel="shortcut icon" th:src="@{/assets/images/dna.jpg}" type="image/x-icon"/>
         <title>GenoBlock</title>
 
         <!-- CSS  -->
@@ -19,12 +19,12 @@
                 <a id="logo-container" href="#" class="brand-logo">GenoBlock</a>
                 <ul class="right hide-on-med-and-down">
                     <li><a th:href="@{/login}">Inicio de sesión</a></li>
-                    <li><a th:href="@{/registry}" class="btn">Registro</a></li>
+                    <li><a th:href="@{/registro}" class="btn">Registro</a></li>
                 </ul>
 
                 <ul id="nav-mobile" class="sidenav">
-                    <li><a href="login.html">Inicio de sesión</a></li>
-                    <li><a href="registry.html" class="btn">Registro</a></li>
+                    <li><a th:href="@{/login}">Inicio de sesión</a></li>
+                    <li><a th:href="@{/registro}" class="btn">Registro</a></li>
                 </ul>
                 <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             </div>
@@ -42,7 +42,7 @@
                     </div>
                 </div>
             </div>
-            <div class="parallax"><img th:href="@{/assets/images/1.jpg}"/></div>
+            <div class="parallax"><img th:src="@{/assets/images/1.jpg}"/></div>
         </div>
 
 
@@ -92,7 +92,7 @@
                     </div>
                 </div>
             </div>
-            <div class="parallax"><img th:href="@{/assets/images/2.jpg}" alt="Unsplashed background img 2"/></div>
+            <div class="parallax"><img th:src="@{/assets/images/2.jpg}" alt="Unsplashed background img 2"/></div>
         </div>
 
         <div class="container">
@@ -118,7 +118,7 @@
                     </div>
                 </div>
             </div>
-            <div class="parallax"><img th:href="@{/assets/images/3.jpg}" alt="Unsplashed background img 3"/></div>
+            <div class="parallax"><img th:src="@{/assets/images/3.jpg}" alt="Unsplashed background img 3"/></div>
         </div>
 
         <footer class="page-footer teal">
