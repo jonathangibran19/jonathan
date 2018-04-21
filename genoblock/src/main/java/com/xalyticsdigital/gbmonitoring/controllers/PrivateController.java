@@ -37,13 +37,13 @@ public class PrivateController {
         return new ModelAndView("private/testsockets");
     }
 
-    @RequestMapping(value = "/sendfile", method = RequestMethod.GET)
+    @RequestMapping(value = "/loadfile", method = RequestMethod.GET)
     //public String sendFile(@RequestPart("foto") byte[] foto,
     public ModelAndView getSenFileView() {
-        return new ModelAndView("private/sendfile");
+        return new ModelAndView("private/loadfile");
     }
 
-    @RequestMapping(value = "/sendfile", method = RequestMethod.POST)
+    @RequestMapping(value = "/loadfile", method = RequestMethod.POST)
     //public String sendFile(@RequestPart("foto") byte[] foto,
     public String sendFile(
             @RequestParam("foto") MultipartFile file, RedirectAttributes redirectAttributes) throws IOException {
