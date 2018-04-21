@@ -4,7 +4,9 @@ import io.ipfs.api.IPFS;
 import io.ipfs.api.MerkleNode;
 import io.ipfs.api.NamedStreamable;
 import io.ipfs.multiaddr.MultiAddress;
+import io.ipfs.multihash.Multihash;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import org.springframework.stereotype.Service;
 
@@ -22,8 +24,18 @@ public class IpfsService {
         return hash;
     }
 
-    public File downloadFile(String hashFile) {
-        return null;
+    public String downloadFile(String hashFile) throws IOException {
+
+        Multihash filePointer = Multihash.fromBase58(hashFile);
+        byte[] fileContents = ipfs.cat(filePointer);
+
+        try (FileOutputStream fos = new FileOutputStream(new File("/home/jonathan/Desktop/genomas/" + hashFile))) {
+            fos.write(fileContents);
+        };
+
+        String url = "https://gateway.ipfs.io/ipfs/" + hashFile;
+
+        return url;
     }
 
     public String listLocalHostHashes() {

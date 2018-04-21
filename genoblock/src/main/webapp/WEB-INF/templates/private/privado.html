@@ -27,7 +27,7 @@
 
     <body>
         <h1>genoblock</h1>
-        <h5 th:text="${'Genoma file uploaded: ' + hash}"></h5>
+        <h5 th:text="${ (hash!=null || !hash.equals('') )? 'Genoma file uploaded: ' + hash : 'NO HASH CREATED' }"></h5>
         <a th:href="@{/private/sendfile}" >Upload file</a>
 
     </body>
