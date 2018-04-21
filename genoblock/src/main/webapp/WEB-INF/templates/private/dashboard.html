@@ -39,6 +39,30 @@
             <div>
                 <div class="container">
                     <h2 class="header center teal-text text-lighten-1">Panel de administraci&oacute;n</h2>
+                    <h6>genoblock</h6>
+                    <h7 th:text="${ (hash!=null) ? 'Genoma file uploaded: ' + hash : 'NO HASH CREATED' }"></h7>
+                    <h7 th:text="${ (link!=null) ? 'Download link: ' + link : 'DOWNLOAD LINK NO GENERATED' }"></h7>
+
+                    <h2 class="header center teal-text text-lighten-1">Mis hashes</h2>
+                    <table class="centered highlight">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Hash</th>
+                                <th>Nombre</th>
+                                <th>Link</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="hash : ${hashes}">
+                                <td th:text="${hash.id}">1</td>
+                                <td th:text="${hash.hash}">1</td>
+                                <td th:text="${hash.nombreArchivo}">1</td>
+                                <td><a rel="canonical" href="${'https://gateway.ipfs.io/ipfs/' + hash.hash}" th:text="${'https://gateway.ipfs.io/ipfs/' + hash.hash}" >Title ...</a></td>
+                                <!--<td th:text="${message.text}">Text ...</td>-->
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <ul id="slide-out" class="sidenav sidenav-fixed">
@@ -84,7 +108,7 @@
                 </div>
             </div>
         </footer>
-        
+
         <!--  Scripts-->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
         <script th:src="@{/assets/js/materialize.js}" type="text/javascript"></script>

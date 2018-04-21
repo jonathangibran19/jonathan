@@ -1,11 +1,15 @@
 package com.xalyticsdigital.gbmonitoring.controllers;
 
+import com.xalyticsdigital.gbmonitoring.models.UserHash;
+import com.xalyticsdigital.gbmonitoring.models.dao.UserHashDAO;
 import com.xalyticsdigital.gbmonitoring.services.ipfs.IpfsService;
 import java.io.File;
 import java.io.IOException;
 import java.security.Principal;
+import java.util.List;
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +25,9 @@ public class PrivateController {
 
     @Autowired
     IpfsService ipfsService;
+    @Autowired
+    @Qualifier("userHashDAO")
+    UserHashDAO userHashDAO;
 
     // @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_DASHBOARD_USER')")
     @RequestMapping(value = "/privado", method = RequestMethod.GET)
@@ -36,10 +43,14 @@ public class PrivateController {
     public ModelAndView getTestSockets(Principal principal) {
         return new ModelAndView("private/testsockets");
     }
-    
-    @RequestMapping(value = "/management", method = RequestMethod.GET)    
+
+    @RequestMapping(value = "/management", method = RequestMethod.GET)
     public ModelAndView getManagement() {
-        return new ModelAndView("private/dashboard");
+
+        ModelAndView mv = new ModelAndView("private/dashboard");
+        List<UserHash> uh = userHashDAO.getAll();
+        mv.addObject("hashes", uh);
+        return mv;
     }
 
     @RequestMapping(value = "/loadfile", method = RequestMethod.GET)
@@ -51,7 +62,7 @@ public class PrivateController {
     @RequestMapping(value = "/loadfile", method = RequestMethod.POST)
     //public String sendFile(@RequestPart("foto") byte[] foto,
     public String sendFile(
-            @RequestParam("foto") MultipartFile file, RedirectAttributes redirectAttributes) throws IOException {
+            @RequestParam("foto") MultipartFile file, RedirectAttributes redirectAttributes, Principal principal) throws IOException {
 
         System.out.println("User home:" + System.getProperty("user.home"));
         String userHome = System.getProperty("user.home");
@@ -63,7 +74,7 @@ public class PrivateController {
 
         redirectAttributes.addFlashAttribute("hash", hash);
 
-        return "redirect:/private/dashboard";
+        return "redirect:/private/management";
     }
 
     @RequestMapping(value = "/downloadfile", method = RequestMethod.GET)

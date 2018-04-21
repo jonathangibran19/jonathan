@@ -13,15 +13,17 @@ public class UserHash extends BaseEntity {
     private LocalDateTime fechaDeIngreso;
     private String email;
     private String password;
+    private String nombreArchivo;
 
     public UserHash() {
     }
 
-    public UserHash(String hash, LocalDateTime fechaDeIngreso, String email, String password) {
+    public UserHash(String hash, LocalDateTime fechaDeIngreso, String email, String password, String nombreArchivo) {
         this.hash = hash;
         this.fechaDeIngreso = fechaDeIngreso;
         this.email = email;
         this.password = password;
+        this.nombreArchivo = nombreArchivo;
     }
 
     public void setHash(String hash) {
@@ -32,7 +34,7 @@ public class UserHash extends BaseEntity {
         return hash;
     }
 
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     public LocalDateTime getFechaDeIngreso() {
         return fechaDeIngreso;
     }
@@ -55,6 +57,14 @@ public class UserHash extends BaseEntity {
 
     public String getPassword() {
         return password;
+    }
+
+    public String getNombreArchivo() {
+        return nombreArchivo;
+    }
+
+    public void setNombreArchivo(String nombreArchivo) {
+        this.nombreArchivo = nombreArchivo;
     }
 
 }
