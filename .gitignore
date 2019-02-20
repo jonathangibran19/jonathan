@@ -11,14 +11,10 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-genoblock/target/classes/\.netbeans_automatic_build
-
-genoblock/target/test-classes/\.netbeans_automatic_build
-
-genoblock/target/surefire-reports/TEST-gbconnected\.test\.Test\.xml
-
-genoblock/target/surefire-reports/gbconnected\.test\.Test\.txt
 
 *.dpf
 
-genoblock/target/maven-archiver/pom\.properties
+
+genoblock/target/
+
+genoblock/nb-configuration\.xml

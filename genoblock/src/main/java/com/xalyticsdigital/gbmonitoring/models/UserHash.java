@@ -1,7 +1,7 @@
 package com.xalyticsdigital.gbmonitoring.models;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDateTime;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
@@ -10,7 +10,7 @@ public class UserHash extends BaseEntity {
 
     @Column(columnDefinition = "TEXT")
     private String hash;
-    private LocalDateTime fechaDeIngreso;
+    private Date fechaDeIngreso;
     private String email;
     private String password;
     private String nombreArchivo;
@@ -18,7 +18,7 @@ public class UserHash extends BaseEntity {
     public UserHash() {
     }
 
-    public UserHash(String hash, LocalDateTime fechaDeIngreso, String email, String password, String nombreArchivo) {
+    public UserHash(String hash, Date fechaDeIngreso, String email, String password, String nombreArchivo) {
         this.hash = hash;
         this.fechaDeIngreso = fechaDeIngreso;
         this.email = email;
@@ -35,12 +35,12 @@ public class UserHash extends BaseEntity {
     }
 
     //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    public LocalDateTime getFechaDeIngreso() {
-        return fechaDeIngreso;
+    public void setFechaDeIngreso(Date fechaDeIngreso) {
+        this.fechaDeIngreso = fechaDeIngreso;
     }
 
-    public void setFechaDeIngreso(LocalDateTime fechaDeIngreso) {
-        this.fechaDeIngreso = fechaDeIngreso;
+    public Date getFechaDeIngreso() {
+        return fechaDeIngreso;
     }
 
     public void setEmail(String email) {

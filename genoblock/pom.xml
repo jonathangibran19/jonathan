@@ -105,30 +105,12 @@
             <version>${spring.security.version}</version>
         </dependency>
         
-        <!-- SPRING WEB SOCKETS  -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-messaging</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-websocket</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.websocket</groupId>
-            <artifactId>javax.websocket-api</artifactId>
-            <version>1.0</version>
-            <scope>provided</scope>
-        </dependency>
-        
         <!-- CONVERTERS -->
-        <dependency>
+        <!--<dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
             <version>2.8.10</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -189,11 +171,12 @@
             <scope>test</scope>
         </dependency>
         
-        <dependency><!-- add Tyrus JSR 356 implementation related dependencies compatibilidad de web socket con spring -->
+        <!-- add Tyrus JSR 356 implementation related dependencies compatibilidad de web socket con spring -->
+        <!--<dependency>
             <groupId>org.glassfish.tyrus</groupId>
             <artifactId>tyrus-server</artifactId>
             <version>1.8</version>
-        </dependency>
+        </dependency>-->
         
    
         <dependency>
@@ -229,8 +212,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.0.2</version>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                 </configuration>
             </plugin>
         </plugins>

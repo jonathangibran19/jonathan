@@ -2,9 +2,6 @@ package com.xalyticsdigital.gbmonitoring.config;
 
 import com.xalyticsdigital.gbmonitoring.components.HibernateConfig;
 import com.xalyticsdigital.gbmonitoring.components.SecurityConfig;
-import com.xalyticsdigital.gbmonitoring.components.WebSocketConfig;
-import java.io.File;
-import java.net.MalformedURLException;
 import java.util.List;
 import java.util.Locale;
 import org.springframework.beans.factory.config.PropertyPlaceholderConfigurer;
@@ -15,7 +12,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -38,7 +34,7 @@ import org.thymeleaf.templateresolver.TemplateResolver;
 @ComponentScan(basePackages = "com.xalyticsdigital.*")
 @EnableWebMvc
 @EnableScheduling
-@Import({HibernateConfig.class, WebSocketConfig.class, SecurityConfig.class})
+@Import({HibernateConfig.class,  SecurityConfig.class})
 public class MvcAppConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
@@ -51,7 +47,7 @@ public class MvcAppConfiguration extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/fonts/**").addResourceLocations("/WEB-INF/resources/fonts/");
         registry.addResourceHandler("/views/**").addResourceLocations("/WEB-INF/views/");
         registry.addResourceHandler("/assets/**").addResourceLocations("/WEB-INF/resources/assets/");
-        registry.addResourceHandler("/fotos/**").addResourceLocations("file:/home/jonathan/Desktop/genomas/");  // system files
+        //registry.addResourceHandler("/fotos/**").addResourceLocations("file:/home/jonathan/Desktop/genomas/");  // system files
     }
 
 //    @Bean
